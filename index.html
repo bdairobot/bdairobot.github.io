@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BDAI Robot — Autonomous Driving · 3D Reconstruction</title>
+<meta name="description" content="Autonomous driving perception, 3D scene reconstruction and generative world models." />
+<style>
+  :root{
+    --bg:#0d1117; --bg2:#161b22; --fg:#e6edf3; --muted:#8b949e;
+    --accent:#58a6ff; --accent2:#7ee787; --line:#21262d; --maxw:820px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;
+    line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  header{padding:96px 0 56px;position:relative;overflow:hidden}
+  header::before{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background:radial-gradient(600px 280px at 15% -10%,rgba(88,166,255,.16),transparent 70%),
+               radial-gradient(500px 260px at 90% 0%,rgba(126,231,135,.10),transparent 70%);
+  }
+  .avatar{
+    width:72px;height:72px;border-radius:50%;display:grid;place-items:center;
+    background:linear-gradient(135deg,#1f6feb,#238636);
+    font-size:28px;font-weight:700;margin-bottom:22px;color:#fff;
+    box-shadow:0 0 0 1px var(--line);
+  }
+  h1{font-size:clamp(28px,5vw,42px);line-height:1.15;letter-spacing:-.5px;margin-bottom:12px}
+  .tagline{color:var(--muted);font-size:clamp(16px,2.4vw,19px);max-width:640px}
+  .tagline b{color:var(--fg);font-weight:600}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+  .chip{
+    font-size:13px;color:var(--accent);border:1px solid var(--line);
+    background:var(--bg2);padding:5px 12px;border-radius:999px;white-space:nowrap;
+  }
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  h2{font-size:22px;margin-bottom:22px;display:flex;align-items:center;gap:10px}
+  h2::before{content:"";width:4px;height:20px;border-radius:2px;background:linear-gradient(var(--accent),var(--accent2))}
+  .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .card{
+    background:var(--bg2);border:1px solid var(--line);border-radius:12px;
+    padding:20px;transition:transform .18s ease,border-color .18s ease;
+  }
+  .card:hover{transform:translateY(-3px);border-color:#30363d}
+  .card .ico{font-size:20px;margin-bottom:10px}
+  .card h3{font-size:15px;margin-bottom:6px}
+  .card p{font-size:13.5px;color:var(--muted)}
+  .stack{display:flex;flex-wrap:wrap;gap:10px}
+  .stack span{
+    font-size:13px;padding:6px 12px;border-radius:8px;
+    background:var(--bg2);border:1px solid var(--line);color:var(--fg)
+  }
+  .contact{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  a.btn{
+    display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+    background:var(--bg2);border:1px solid var(--line);color:var(--fg);
+    padding:10px 16px;border-radius:10px;font-size:14px;transition:.18s;
+  }
+  a.btn:hover{border-color:var(--accent);color:var(--accent)}
+  footer{padding:40px 0 60px;color:var(--muted);font-size:13px;text-align:center}
+  footer .dot{color:#30363d;margin:0 8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="avatar">B</div>
+    <h1>BDAI Robot</h1>
+    <p class="tagline">
+      Building <b>autonomous-driving perception</b>, <b>3D scene reconstruction</b>
+      and <b>generative world models</b> for physical AI.
+    </p>
+    <div class="chips">
+      <span class="chip">Autonomous Driving</span>
+      <span class="chip">3D Reconstruction</span>
+      <span class="chip">Gaussian Splatting</span>
+      <span class="chip">World Models</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Focus</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="ico">🚗</div>
+        <h3>Surround-View Reconstruction</h3>
+        <p>Multi-camera driving scenes, pinhole + fisheye native support, high-fidelity digital twins.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🧊</div>
+        <h3>3D Gaussian Splatting</h3>
+        <p>Feed-forward and optimization-based 3DGS / 3DGUT for editable, relightable driving scenes.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🌍</div>
+        <h3>World Models</h3>
+        <p>Generative simulation for closed-loop evaluation and scalable data synthesis.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🎛️</div>
+        <h3>Multi-Sensor Fusion</h3>
+        <p>Camera · LiDAR · Radar consistency, novel-view synthesis, geometry-aware rendering.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Toolbox</h2>
+    <div class="stack">
+      <span>Python</span><span>PyTorch</span><span>CUDA</span>
+      <span>3DGS / 3DGUT</span><span>NeRF</span><span>COLMAP</span>
+      <span>OpenCV</span><span>ROS</span><span>Git</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="contact">
+      <a class="btn" href="mailto:bdairobot@163.com">📫 bdairobot@163.com</a>
+      <a class="btn" href="https://github.com/bdairobot" target="_blank" rel="noopener">💻 GitHub</a>
+    </div>
+  </section>
+
+  <footer>
+    BDAI Robot <span class="dot">·</span> Perception &amp; Simulation for Physical AI
+  </footer>
+</div>
+</body>
+</html>
